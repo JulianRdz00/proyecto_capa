@@ -1,0 +1,18 @@
+.navbar-bg {
+    background: #1E2A47;
+    color: #FFFFFF;
+}
+
+.inisesion-button {
+    color: #08D23C;
+    background-color: #1E2A47;
+}
+
+.reg-button {
+    color: #FFFFFF;
+    background-color: #08D23C;
+}
+
+.search {
+    width: 12vw;
+}
