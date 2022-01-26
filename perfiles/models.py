@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 class Perfiles(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 	# pais = models.TextField(max_length=50) (fijarse si hay alguna forma de seleccionar pais)
     # genero = models.TextField(max_length=50) (fijarse si hay alguna forma de configurar opciones a seleccionar)
     # conocimientos_ingles = models.TextField(max_length=50) (fijarse si hay alguna forma de configurar opciones a seleccionar)
