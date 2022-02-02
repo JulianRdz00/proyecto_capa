@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <title>Home</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-bg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="" width="30" height="30" class="d-inline-block align-text-top">
+      </a>
+      <span class="navbar-brand navbar-bg">El Chamán</span>
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">   
+        <div class="navbar-nav navMargin ms-lg-auto text-end left">
+            <form class="position-relative top-0 end-0">
+                <button class="btn btn-outline-success me-2 inisesion-button" type="button">INICIAR SESIÓN</button>
+                <button class="btn btn-outline-success me-2 reg-button" type="button">REGISTRATE</button>
+              </form>
+              <form class="d-flex search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              </form>
+        </div>
+    </div>
+  </div>
+</nav>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+{% block content %}
+{% endblock content %}
+</body>
+</html>

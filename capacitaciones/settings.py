@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'perfiles',
     'cursos',
-    'django_countries'
+    'django_countries',
 ]
 
 MIDDLEWARE = [
