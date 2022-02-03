@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Perfil Edit</h2>
+    <form method="Perfiles" class="text-white">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary active">Guardar Cambios</button>
+    </form>
+{% endblock %}
