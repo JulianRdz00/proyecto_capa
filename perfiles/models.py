@@ -5,18 +5,18 @@ from django.utils import timezone
 from django_countries.fields import CountryField
 
 
-genero_opciones = [
+genero_opciones = (
         ('Masculino','Masculino'),
         ('Femenino','Femenino'),
         ('Otro','Otro'),
-        ]
+)
 
-conocimientos_ingles = [
+conocimientos_ingles = (
         ('Nulo','Nulo'),
         ('Basico','Basico'),
         ('Intermedio','Intermedio'),
         ('Avanzado','Avanzado'),
-        ]
+)
 
 
 class Perfiles(models.Model):
@@ -37,7 +37,7 @@ class Perfiles(models.Model):
     linkedin = models.CharField(max_length=100, null=True, blank=True)
     youtube = models.CharField(max_length=100, null=True, blank=True)
     nacionalidad = CountryField(null=True, blank=True)
-    generos = models.CharField(
+    genero = models.CharField(
         max_length=12,
         choices= genero_opciones,
         default='Masculino',

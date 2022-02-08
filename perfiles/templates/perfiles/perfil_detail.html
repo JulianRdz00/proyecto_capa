@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-white">
+        <a class="btn btn-success" href="{% url 'perfil_edit' pk=post.pk %}">Editar</a>
+        <h2>Usuario: {{ post.user }}</h2>
+        <p>Nivel de Ingles: {{ post.ingles }}</p>
+        <p>Formacion Academica: {{ post.formacion_academica }}</p>
+        <p>Profesion: {{ post.profesion }}</p>
+        {% if post.fotos %}
+        <p>{{ post.fotos }}</p>
+        {% endif %}
+        {% if post.webPage %}
+        <p>WebPage: {{ post.webPage }}</p>
+        {% endif %}
+        {% if post.twitter %}
+        <p>Twitter: {{ post.twitter }}</p>
+        {% endif %}
+        {% if post.facebook %}
+        <p>Facebook: {{ post.facebook }}</p>
+        {% endif %}
+        {% if post.linkedin %}
+        <p>Linkedin: {{ post.linkedin }}</p>
+        {% endif %}
+        {% if post.youtube %}
+        <p>Youtube: {{ post.youtube }}</p>
+        {% endif %}
+        <p>Nacionalidad: {{ post.nacionalidad }}</p>
+        <p>Genero: {{ post.genero }}</p>
+    </div>
+{% endblock %}
