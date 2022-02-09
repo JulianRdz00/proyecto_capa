@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-white"> {{modulo}} </h1> 
+    <p class="text-white">Curso al que Pertenece: {{modulo.curso}}</p>
+    <p class="text-white">Archivos subidos: {{modulo.archivos}}</p>
+{% endblock content %}

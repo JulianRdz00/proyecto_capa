@@ -5,24 +5,30 @@ from libs.models import CommonInfo
 
 
 class Curso(CommonInfo):
-    titulo_curso = models.CharField(max_length=50)
-    descripcion_curso = models.TextField()
-    vigencia = models.DateTimeField(default=timezone.now)
-    persona_asignada = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="cursos")
+    titulo = models.CharField(max_length=50)
+    descripcion = models.TextField()
+    vigencia = models.DateTimeField(null=True, blank=True)
+    persona_asignada = models.ForeignKey(null=True, blank=True, to=User, on_delete=models.CASCADE, related_name="asignado")
+    autor = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="cursos", null=True, blank=True)
 
 
 class Modulos(CommonInfo):
-    cursos = models.ForeignKey(to=Curso, on_delete=models.CASCADE, related_name="modulos")
-    archivos = models.FileField(upload_to="archivos_subidos", max_length=20, null=True)
+    curso = models.ForeignKey(to=Curso, on_delete=models.CASCADE, related_name="modulos")
+    archivos = models.FileField(upload_to="archivos_subidos", max_length=20, null=True, blank=True)
     
 
 class Video(CommonInfo):
-    modulos = models.ForeignKey(to=Modulos, on_delete=models.CASCADE, related_name="videos")
-    video = models.FileField(upload_to="videos", max_length=20, null=True)
-    título = models.CharField(max_length=50)
-    descripción = models.TextField(null=True)
+    video = models.FileField(upload_to="videos", max_length=20, null=True, blank=True)
+    modulo = models.ForeignKey(to=Modulos, on_delete=models.CASCADE, related_name="videos")
+    titulo = models.CharField(max_length=50)
+    descripcion = models.TextField(null=True, blank=True)
     
 
 #class Ejercitacion(CommonInfo):
     #modulos = models.ForeignKey(to=Modulos, on_delete=models.CASCADE, related_name= "Ejercitacion")
-    #ejemplo = models.TextField(null=True)
+    #opcion_1 = models.TextField()
+    #opcion_2 = models.TextField()
+    #opcion_3 = models.TextField(null=True)
+    #opcion_4 = models.TextField(null=True)
+    #opcion_5 = models.TextField(null=True)
+    #opcion_correcta = models.Texfield()

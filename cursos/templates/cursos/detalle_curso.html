@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <h1 class="text-white"> {{curso}} </h1> 
+   <p class="text-white">Titulo: {{curso.titulo}}</p>
+   <p class="text-white">Descripción: {{curso.descripcion}}</p>
+   <p class="text-white">Vigencia: {{curso.vigencia}}</p>
+   <p class="text-white">Persona Asignada: {{curso.persona_asignada}}</p>
+{% endblock content %}
