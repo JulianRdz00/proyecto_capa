@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-white"> {{video}} </h1> 
+    <p class="text-white">Video Subido: {{video.video}}</p>
+    <p class="text-white">Modulo al que Pertenece: {{video.modulo}}</p>
+    <p class="text-white">Título: {{video.titulo}}</p>
+    <p class="text-white">Descripción: {{video.descripcion}}</p>
+{% endblock content %}
