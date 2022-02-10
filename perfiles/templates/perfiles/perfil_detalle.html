@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-white">
+        <a class="btn btn-success" href="{% url 'perfil_editar' pk=perfil_detalle.pk %}">Editar</a>
+        <h2>Usuario: {{ perfil_detalle.user }}</h2>
+        {% if perfil_detalle.ingles %}
+            <p>Nivel de Ingles: {{ perfil_detalle.ingles }}</p>
+        {% endif %}
+        <p>Formacion Academica: {{ perfil_detalle.formacion_academica }}</p>
+        {% if perfil_detalle.profesion %}
+            <p>Profesion: {{ perfil_detalle.profesion }}</p>
+        {% endif %}
+        {% if perfil_detalle.fotos %}
+            <p>{{ perfil_detalle.fotos }}</p>
+        {% endif %}
+        {% if perfil_detalle.webPage %}
+            <p>WebPage: {{ perfil_detalle.webPage }}</p>
+        {% endif %}
+        {% if perfil_detalle.twitter %}
+            <p>Twitter: {{ perfil_detalle.twitter }}</p>
+        {% endif %}
+        {% if perfil_detalle.facebook %}
+            <p>Facebook: {{ perfil_detalle.facebook }}</p>
+        {% endif %}
+        {% if perfil_detalle.linkedin %}
+            <p>Linkedin: {{ perfil_detalle.linkedin }}</p>
+        {% endif %}
+        {% if perfil_detalle.youtube %}
+            <p>Youtube: {{ perfil_detalle.youtube }}</p>
+        {% endif %}
+        {% if perfil_detalle.nacionalidad %}
+            <p>Nacionalidad: {{ perfil_detalle.nacionalidad }}</p>
+        {% endif %}
+        {% if perfil_detalle.genero%}
+        <p>Genero: {{ perfil_detalle.genero }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
