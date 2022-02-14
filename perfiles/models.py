@@ -26,7 +26,7 @@ class Perfiles(models.Model):
         default='Nulo',
         blank=True,
         null=True,
-    )
+        )
     formacion_academica = models.TextField(max_length=500, null=True, blank=True)
     profesion = models.TextField(max_length=100, null=True, blank=True)
     fotos = models.ImageField(upload_to="fotos", null=True, blank=True)
