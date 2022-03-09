@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+<html>
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-8">
+                {% include "cursos/modulo_video.html" %} 
+            </div>
+            <div class="col-xl-4">
+                {% include "cursos/chat.html" %}
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-8">
+                
+            </div>
+            <div class="col-xl-4">
+                {% include "cursos/comentarios.html" %}
+            </div>
+            
+        </div>
+    </div>
+
+{% endblock content %}
+</html>

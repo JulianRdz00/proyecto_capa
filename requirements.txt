@@ -2,3 +2,4 @@ django
 django-channels
 django-countries[pyuca]
 Pillow
+PyYAML

@@ -16,3 +16,192 @@
 .search {
     width: 12vw;
 }
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color: #121F3D;
+}
+
+.post1 {
+    background-color: #152F69;
+    height: 20%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.post2 {
+    background-color: #14264F;
+    height: 20%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.infoUsuario {
+    display: flex;
+}
+
+.imgPerfil {
+    height: 37px;
+    width: 37px;
+    border-radius: 1000px;
+}
+
+.nombreUsuario {
+    margin-top: 0.5em;
+    color: white;
+}
+
+.tipoUsuario {
+    margin-top: 2em;
+    margin-left: 3.5em;
+    position: absolute;
+    margin-right: 8em;
+    font-size: 0.8em;
+    color: #BFD634;
+}
+
+.tamañoTipoUsuario {
+    font-size: 0.9em;
+}
+
+.botonesPost {
+    display: flex;
+}
+
+.contenidoPost {
+    font-size: 1.05em;
+    color: #D0D5E1;
+}
+
+.meGusta {
+    cursor: pointer;
+    margin: 10px;
+    height: 24px;
+    width: 24px;
+}
+
+.noGusta {
+    cursor: pointer;
+    margin: 10px;
+    height: 24px;
+    width: 24px;
+}
+
+.imgRespuesta {
+    margin-left: 0.5em;
+    height: 24px;
+    width: 24px;
+}
+
+.respuesta a{
+    text-decoration: none;
+    text-decoration: underline;
+    color: #D0D5E1;
+}
+
+.respuesta a:hover{
+    text-decoration: none;
+    text-decoration: underline;
+    color: #D0D5E1;
+}
+
+.respuesta a:active {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #D0D5E1;
+}
+
+.respuesta a:focus {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #D0D5E1;
+}
+
+.contenedor{
+    margin-top: 3%;
+    margin-left: 3%;
+    background-color: #3B4865;
+    height: 90%;
+    width: 90%;
+    border-radius: 20px;
+}
+
+.areaenvio{
+    position:absolute;
+    height: 4%;
+    width: 21%;
+    margin-left:0.7%;
+    top:79%;
+}
+
+.sendbox{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.icono{
+    height: 90%;
+    width: 10%;
+    position: absolute;
+    right: -14%;
+}
+
+.textos{
+    margin-left: 3%;
+    position: relative;
+}
+
+.join{
+    position: absolute;
+    margin-left: 16%;
+    font-family: cursive;
+    color: grey;
+    top: 12px;
+}
+
+.areamensajes{
+    height: 100%;
+    width: 100%;
+    height: 55px;
+    width: 450px;  
+    border-radius: 20px;
+    position: absolute;
+    top: 60px;
+}
+
+.fotoperfil{
+    background-color: #3B4865;
+    height: 55px;
+    width: 55px;
+    border-radius: 20px;
+}
+
+.chattextbox{
+    background-color: hsl(240, 47%, 35%);
+    position: absolute;
+    height:55px ;
+    width: 400px;
+    margin-left: 60px;
+    border-radius: 20px;
+    top:70%
+}
+
+.msg{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-left: 20%;
+    margin-top: 2%;
+}    
+    
+
+.user{
+    position: absolute;
+    border-radius: 20px;
+    background-color: rgb(44, 67, 102);
+    height: 55px;
+    width: 55px; 
+    top: 70%;
+}

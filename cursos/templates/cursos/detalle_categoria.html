@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <h1 class="text-white"> {{categoria}} </h1> 
+   <p class="text-white">Título: {{categoria.titulo}}</p>
+   <p class="text-white">Ícono:</p> <img src="{% if categoria.iconos %}{{ categoria.iconos.url }}{% else %}#{% endif  %}" alt="">
+{% endblock content %}
