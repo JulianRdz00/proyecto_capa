@@ -102,8 +102,15 @@ def curso_video(request, pk, pk_modulo):
     return render(request, 'cursos/modulo_video.html', {'curso': curso, 'modulo': modulo})
 
 
-
-def curso_showtime(request, pk, pk_modulo):
+def curso_descripcion(request, pk, pk_modulo, pk_categoria):
     curso = get_object_or_404(Curso, pk=pk)
     modulo = get_object_or_404(Modulos, pk=pk_modulo)
-    return render(request, 'cursos/modulo_vista.html', {'curso': curso, 'modulo': modulo})
+    categoria = get_object_or_404(Categoria, pk=pk_categoria)
+    return render(request, 'cursos/descripcion.html', {'curso': curso, 'modulo': modulo, 'categoria': categoria})
+
+
+def curso_showtime(request, pk, pk_modulo, pk_categoria):
+    curso = get_object_or_404(Curso, pk=pk)
+    modulo = get_object_or_404(Modulos, pk=pk_modulo)
+    categoria = get_object_or_404(Categoria, pk=pk_categoria)
+    return render(request, 'cursos/modulo_vista.html', {'curso': curso, 'modulo': modulo, 'categoria': categoria})

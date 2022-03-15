@@ -1,0 +1,60 @@
+{% load static %}
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="infoUsuario">
+                    <div class="imgPerfil m-1">
+                        <img class="iconoSeccion m-1" src="{{ categoria.icono.url }}">
+                    </div>
+                    <div>
+                    <h3 class="tituloModulo">{{ curso.titulo }}</h3>
+                    </div>
+                    <div class="tipoUsuario">
+                        <img class="imgPersonaAsignada" src="{% static 'img/el_profe.png' %}">
+                    </div>
+                    <div class="personaAsignada">
+                        <h6 class="tamañoAsignada">{{curso.persona_asignada}}</h6>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="descripcion col-12">
+                <div>
+                    <h1 class="text-white"><b>{{ modulo.titulo }}</b></h1>
+                </div>
+                <br>
+                <hr class="barra">
+                <br>
+                <div>
+                    <h2 class="text-white"><b>Información</b></h2>
+                    <div class="text-white">
+                        {{ modulo.descripcion }}
+                    </div>
+                </div>
+                <br>
+                <hr class="barra">
+                <br>
+                <div>
+                    <h3 class="text-white">Links de Relevancia</h3>
+                    <div class="text-white">
+                        {{ modulo.links_relevantes }}
+                    </div>
+                </div>
+                <br>
+                <hr class="barra">
+                <br>
+                <div>
+                    <h3 class="text-white">Archivos</h3>
+                    <div class="text-white">
+                        {{ modulo.archivos }}
+                    </div>
+                    <div class="descripcionArchivo">
+                        {{ modulo.descripcion_archivos }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

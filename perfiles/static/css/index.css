@@ -196,7 +196,6 @@
     margin-top: 2%;
 }    
     
-
 .user{
     position: absolute;
     border-radius: 20px;
@@ -204,4 +203,50 @@
     height: 55px;
     width: 55px; 
     top: 70%;
+}
+
+.iconoSeccion{
+    height: 72px;
+    width: 72px;
+    border-radius: 1000px;
+}
+
+.imgPersonaAsignada{
+    height: 37px;
+    width: 37px;
+    border-radius: 1000px;
+    margin-top: 1em;
+    margin-left: 3.8em;
+}
+
+.tituloModulo{
+    margin-left: 1.5em;
+    color: white;
+    font-size: 2em;
+}
+
+.personaAsignada{
+    margin-left: 9em;
+    margin-bottom: 1em;
+    margin-top: 3em;
+    position: absolute;
+    color: white;
+}
+
+.tamañoAsignada{
+    font-size: 1em;
+}
+
+.barra{
+    background-color: white;
+}
+
+.descripcionArchivo{
+    color: white;
+    margin-top: 2em;
+}
+
+.descripcion{
+    margin-left: 2em;
+    margin-top: 6em;
 }

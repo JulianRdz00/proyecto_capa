@@ -28,7 +28,7 @@ class Modulos(CommonInfo):
     titulo = models.CharField(max_length=50, null=True)
     video = models.FileField(upload_to="videos", max_length=100, null=True, blank=True)
     descripcion = models.TextField(null=True, blank=True)
-    archivos = models.FileField(upload_to="archivos_subidos", max_length=20, null=True, blank=True)
+    archivos = models.FileField(upload_to="archivos_subidos", null=True, blank=True)
     descripcion_archivos = models.TextField(null=True, blank=True)
     links_relevantes = models.TextField(null=True, blank=True)
 

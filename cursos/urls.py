@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path('curso/<int:pk>/modulo/<int:pk_modulo>/', views.curso_showtime, name='curso_vista'),
+    path('curso/<int:pk>/modulo/<int:pk_modulo>/categoria/<int:pk_categoria>/', views.curso_showtime, name='curso_vista'),
     path('curso/crear/', views.nuevo_curso, name='nuevo_curso'),
     path('curso/<int:pk>/detalle/', views.detalle_curso, name='detalle_curso'),
     path('curso/<int:pk>/editar/', views.editar_curso, name='editar_curso'),
@@ -14,4 +14,5 @@ urlpatterns = [
     path('categoria/<int:pk>/detalle/', views.detalle_categoria, name='detalle_categoria'),
     path('categoria/<int:pk>/editar/', views.editar_categoria, name='editar_categoria'),
     path('curso/<int:pk>/modulo/<int:pk_modulo>/video', views.curso_video, name='curso_video'),
+    path('curso/<int:pk>/modulo/<int:pk_modulo>/categoria/<int:pk_categoria>/descripcion', views.curso_descripcion, name='curso_descripcion')
 ]
