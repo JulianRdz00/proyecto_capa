@@ -31,6 +31,8 @@ class Modulos(CommonInfo):
     archivos = models.FileField(upload_to="archivos_subidos", null=True, blank=True)
     descripcion_archivos = models.TextField(null=True, blank=True)
     links_relevantes = models.TextField(null=True, blank=True)
+    habilitar_chat = models.BooleanField(default=True)
+    habilitar_comentarios = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return self.titulo

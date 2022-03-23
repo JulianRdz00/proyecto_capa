@@ -251,7 +251,11 @@
     margin-top: 6em; 
 }
     
-.imgAdmin {
+.imgAdmin{
     margin-top: 5%;
     padding-bottom: 0px;
+}
+
+.iniciarSesion-container-fluid{
+    background-color: white;
 }
