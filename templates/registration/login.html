@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="iniciarSesion-container-fluid">
+  <div class="row">
+    
+    <h2 class="text-white">Inicia Sesión</h2>
+    <form method="post", class="iniciarSesion">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
