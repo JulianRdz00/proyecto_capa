@@ -1,9 +1,20 @@
 from dataclasses import field
 from pyexpat import model
 from django import forms
+from .models import Categoria, Comentarios
 from .models import Curso
 from .models import Modulos
-from .models import Video
+
+
+class CategoriaForm(forms.ModelForm):
+    class Meta:
+        model = Categoria
+        exclude = [
+            'autor',
+            'fecha_de_creación',
+            'fecha_de_publicación',
+            'is_deleted',
+        ]
 
 
 class CursoForm(forms.ModelForm):
@@ -27,11 +38,13 @@ class ModulosForm(forms.ModelForm):
         ]
 
 
-class VideoForm(forms.ModelForm):
+class ComentariosForm(forms.ModelForm):
     class Meta:
-        model = Video
+        model = Comentarios
         exclude = [
+            'autor',
             'fecha_de_creación',
             'fecha_de_publicación',
             'is_deleted',
+            'modulo',
         ]

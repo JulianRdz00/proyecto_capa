@@ -2,6 +2,12 @@
 
 {% block content %}
     <h1 class="text-white"> {{modulo}} </h1> 
-    <p class="text-white">Curso al que Pertenece: {{modulo.curso}}</p>
+    <p class="text-white">Curso: {{modulo.curso}}</p>
+    <p class="text-white">Título: {{modulo.titulo}}</p>
+    <p class="text-white">Video: {{modulo.video}}</p>
+    <p class="text-white">Descripción: {{modulo.descripcion}}</p>
     <p class="text-white">Archivos subidos: {{modulo.archivos}}</p>
+    <p class="text-white">Descripción de archivos: {{modulo.descripcion_archivos}}</p>
+    <p class="text-white">Links relevantes: {{modulo.links_relevantes}}</p>
+
 {% endblock content %}

@@ -1,0 +1,25 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body bgcolor="121F3D" class="general">
+    <div class="contenedor">
+            <div class="fotoperfil">
+                <img class="user" src="{% static 'img/user.png' %}"/>
+            </div>
+            <div class="chattextbox"> 
+                <p class="msg"><p>. MatyJuan:</p>. Hola! Buen dia! Necesito ayuda con un ejercicio.</p>
+            </div>
+        </div>
+                <div class="areaenvio">
+                    <input class=sendbox type="text">
+                    <img class=icono src="{% static 'img/enviar.svg' %}"/>
+                </div>
+    </div>
+</body>
+</html>

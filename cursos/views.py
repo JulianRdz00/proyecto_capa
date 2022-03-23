@@ -1,7 +1,9 @@
-from cursos.models import Curso, Modulos, Video
+from genericpath import exists
+from operator import ge
+from cursos.models import Categoria, Comentarios, Curso, Modulos
+from .forms import CategoriaForm, ComentariosForm
 from .forms import CursoForm
 from .forms import ModulosForm
-from .forms import VideoForm
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 
@@ -17,28 +19,6 @@ def nuevo_curso(request):
     else:
         form = CursoForm()
     return render(request, 'cursos/nuevo_curso.html', {'form': form})
-
-
-def nuevo_modulo(request):
-    if request.method == "POST":
-        form = ModulosForm(request.POST)
-        if form.is_valid():
-            modulos = form.save()
-            return redirect('detalle_modulo', pk=modulos.pk)
-    else:
-        form = ModulosForm()
-    return render(request, 'cursos/nuevo_modulo.html', {'form': form})
-
-
-def nuevo_video(request):
-    if request.method == "POST":
-        form = VideoForm(request.POST)
-        if form.is_valid():
-            video = form.save()
-            return redirect('detalle_video', pk=video.pk)
-    else:
-        form = VideoForm()
-    return render(request, 'cursos/nuevo_video.html', {'form': form})
 
 
 def detalle_curso(request, pk):
@@ -60,6 +40,17 @@ def editar_curso(request, pk):
     return render(request, 'cursos/nuevo_curso.html', {'form': form})
 
 
+def nuevo_modulo(request):
+    if request.method == "POST":
+        form = ModulosForm(request.POST)
+        if form.is_valid():
+            modulos = form.save()
+            return redirect('detalle_modulo', pk=modulos.pk)
+    else:
+        form = ModulosForm()
+    return render(request, 'cursos/nuevo_modulo.html', {'form': form})
+
+
 def detalle_modulo(request, pk):
     modulo = get_object_or_404(Modulos, pk=pk)
     return render(request, 'cursos/detalle_modulo.html', {'modulo': modulo})
@@ -77,19 +68,77 @@ def editar_modulo(request, pk):
     return render(request, 'cursos/nuevo_modulo.html', {'form': form})
 
 
-def detalle_video(request, pk):
-    video = get_object_or_404(Video, pk=pk)
-    return render(request, 'cursos/detalle_video.html', {'video': video})
-
-
-def editar_video(request, pk):
-    video = get_object_or_404(Video, pk=pk)
+def nueva_categoria(request):
     if request.method == "POST":
-        form = VideoForm(request.POST, instance=video)
+        form = CategoriaForm(request.POST)
         if form.is_valid():
-            video = form.save()
-            return redirect('detalle_video', pk=video.pk)
+            categoria = form.save()
+            return redirect('detalle_categoria', pk=categoria.pk)
     else:
-        form = VideoForm(instance=video)
-    return render(request, 'cursos/nuevo_video.html', {'form': form})
-    
+        form = CategoriaForm()
+    return render(request, 'cursos/nueva_categoria.html', {'form': form})
+
+
+def detalle_categoria(request, pk):
+    categoria = get_object_or_404(Categoria, pk=pk)
+    return render(request, 'cursos/detalle_categoria.html', {'categoria': categoria})
+
+
+def editar_categoria(request, pk):
+    categoria = get_object_or_404(Categoria, pk=pk)
+    if request.method == 'POST':
+        form = CategoriaForm(request.POST, instance=categoria)
+        if form.is_valid():
+            categoria = form.save()
+            return redirect('detalle_categoria', pk=categoria.pk)
+    else:
+        form = CategoriaForm(instance=categoria)
+    return render(request, 'cursos/nueva_categoria.html', {'form': form})
+
+
+def curso_video(request, pk, pk_modulo):
+    curso = get_object_or_404(Curso, pk=pk)
+    modulo = get_object_or_404(Modulos, pk=pk_modulo)
+    return render(request, 'cursos/modulo_video.html', {'curso': curso, 'modulo': modulo})
+
+
+def curso_descripcion(request, pk, pk_modulo, pk_categoria):
+    curso = get_object_or_404(Curso, pk=pk)
+    modulo = get_object_or_404(Modulos, pk=pk_modulo)
+    categoria = get_object_or_404(Categoria, pk=pk_categoria)
+    return render(request, 'cursos/descripcion.html', {'curso': curso, 'modulo': modulo, 'categoria': categoria})
+
+
+def curso_showtime(request, pk, pk_modulo, pk_categoria):
+    curso = get_object_or_404(Curso, pk=pk)
+    modulo = get_object_or_404(Modulos, pk=pk_modulo)
+    categoria = get_object_or_404(Categoria, pk=pk_categoria)
+    return render(request, 'cursos/modulo_vista.html', {'curso': curso, 'modulo': modulo, 'categoria': categoria})
+
+
+def nuevo_comentario(request):
+    if request.method == "POST":
+        form = ComentariosForm(request.POST)
+        if form.is_valid():
+            comentario = form.save()
+            return redirect('detalle_comentario', pk=comentario.pk)
+    else:
+        form = ComentariosForm()
+    return render(request, 'cursos/nuevo_comentario.html', {'form': form})
+
+
+def detalle_comentario(request, pk):
+    comentario = get_object_or_404(Comentarios, pk=pk)
+    return render(request, 'cursos/detalle_comentario.html', {'comentario': comentario})
+
+
+def editar_comentario(request, pk):
+    comentario = get_object_or_404(Comentarios, pk=pk)
+    if request.method == 'POST':
+        form = ComentariosForm(request.POST, instance=comentario)
+        if form.is_valid():
+            comentario = form.save()
+            return redirect('detalle_comentario', pk=comentario.pk)
+    else:
+        form = ComentariosForm(instance=comentario)
+    return render(request, 'cursos/nuevo_comentario.html', {'form': form})

@@ -1,8 +1,8 @@
 from django.contrib import admin
-from.models import Curso, Modulos, Video
+from.models import Categoria, Curso, Modulos
 
 
 admin.site.register(Curso)
 admin.site.register(Modulos)
-admin.site.register(Video)
+admin.site.register(Categoria)
 

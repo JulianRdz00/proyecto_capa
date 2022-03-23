@@ -1,0 +1,12 @@
+- model: cursos.Categoria
+  pk: 1
+  fields:
+    titulo: RRHH
+- model: cursos.Categoria
+  pk: 2
+  fields:
+    titulo: Logística
+- model: cursos.Categoria
+  pk: 3
+  fields:
+    titulo: Programación
