@@ -1,7 +1,7 @@
 from genericpath import exists
 from operator import ge
-from cursos.models import Categoria, Curso, Modulos
-from .forms import CategoriaForm
+from cursos.models import Categoria, Comentarios, Curso, Modulos
+from .forms import CategoriaForm, ComentariosForm
 from .forms import CursoForm
 from .forms import ModulosForm
 from django.shortcuts import redirect
@@ -114,3 +114,31 @@ def curso_showtime(request, pk, pk_modulo, pk_categoria):
     modulo = get_object_or_404(Modulos, pk=pk_modulo)
     categoria = get_object_or_404(Categoria, pk=pk_categoria)
     return render(request, 'cursos/modulo_vista.html', {'curso': curso, 'modulo': modulo, 'categoria': categoria})
+
+
+def nuevo_comentario(request):
+    if request.method == "POST":
+        form = ComentariosForm(request.POST)
+        if form.is_valid():
+            comentario = form.save()
+            return redirect('detalle_comentario', pk=comentario.pk)
+    else:
+        form = ComentariosForm()
+    return render(request, 'cursos/nuevo_comentario.html', {'form': form})
+
+
+def detalle_comentario(request, pk):
+    comentario = get_object_or_404(Comentarios, pk=pk)
+    return render(request, 'cursos/detalle_comentario.html', {'comentario': comentario})
+
+
+def editar_comentario(request, pk):
+    comentario = get_object_or_404(Comentarios, pk=pk)
+    if request.method == 'POST':
+        form = ComentariosForm(request.POST, instance=comentario)
+        if form.is_valid():
+            comentario = form.save()
+            return redirect('detalle_comentario', pk=comentario.pk)
+    else:
+        form = ComentariosForm(instance=comentario)
+    return render(request, 'cursos/nuevo_comentario.html', {'form': form})

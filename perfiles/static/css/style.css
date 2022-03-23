@@ -248,5 +248,10 @@
 
 .descripcion{
     margin-left: 2em;
-    margin-top: 6em;
+    margin-top: 6em; 
+}
+    
+.imgAdmin {
+    margin-top: 5%;
+    padding-bottom: 0px;
 }

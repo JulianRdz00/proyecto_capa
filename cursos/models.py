@@ -36,6 +36,12 @@ class Modulos(CommonInfo):
         return self.titulo
 
 
+class Comentarios(CommonInfo):
+    autor = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="usuario_comentarios", null=True, blank=True)
+    comentario = models.TextField()
+    modulo = models.ForeignKey(to=Modulos, on_delete=models.CASCADE, related_name="modulo_comentarios", null=True, blank=True)
+
+
 #class Ejercitacion(CommonInfo):
     #modulos = models.ForeignKey(to=Modulos, on_delete=models.CASCADE, related_name= "Ejercitacion")
     #opcion_1 = models.TextField()

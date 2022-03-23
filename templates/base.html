@@ -2,15 +2,15 @@
 <html>
     <head>
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <title>Home</title>
-</head>
+    </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-bg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="" width="30" height="30" class="d-inline-block align-text-top">
-      </a>
+        <img src="/media/Python.svg" alt="" width="30" height="30" class="d-inline-block align-text-top">
+    </a>
       <span class="navbar-brand navbar-bg">El Chamán</span>
       <button
       class="navbar-toggler"
@@ -25,13 +25,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">   
         <div class="navbar-nav navMargin ms-lg-auto text-end left">
-            <form class="position-relative top-0 end-0">
-                <button class="btn btn-outline-success me-2 inisesion-button" type="button">INICIAR SESIÓN</button>
-                <button class="btn btn-outline-success me-2 reg-button" type="button">REGISTRATE</button>
-              </form>
-              <form class="d-flex search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              </form>
+          <form class="position-relative top-0 end-0">
+            {% if request.user.is_authenticated %}
+            {% else %}
+              <button class="btn btn-outline-success me-2 inisesion-button" type="button">INICIAR SESIÓN</button>
+              <button class="btn btn-outline-success me-2 reg-button" type="button">REGISTRATE</button>
+            {% endif %}
+          </form>
+          <form>
+            {% if request.user.is_staff %}
+            <a href="/admin/"><img src="/media/adminConfig.png" alt="" width="35" height="35" class="d-inline-block align-text-top imgAdmin"></a>
+            {% else %}
+            {% endif %}
+          </form>
         </div>
     </div>
   </div>

@@ -13,6 +13,9 @@ urlpatterns = [
     path('categoria/crear/', views.nueva_categoria, name='nueva_categoria'),
     path('categoria/<int:pk>/detalle/', views.detalle_categoria, name='detalle_categoria'),
     path('categoria/<int:pk>/editar/', views.editar_categoria, name='editar_categoria'),
-    path('curso/<int:pk>/modulo/<int:pk_modulo>/video', views.curso_video, name='curso_video'),
-    path('curso/<int:pk>/modulo/<int:pk_modulo>/categoria/<int:pk_categoria>/descripcion', views.curso_descripcion, name='curso_descripcion')
+    path('curso/<int:pk>/modulo/<int:pk_modulo>/categoria/<int:pk_categoria>/video/', views.curso_video, name='curso_video'),
+    path('curso/<int:pk>/modulo/<int:pk_modulo>/categoria/<int:pk_categoria>/descripcion/', views.curso_descripcion, name='curso_descripcion'),
+    path('comentario/crear/', views.nuevo_comentario, name='nuevo_comentario'),
+    path('comentario/<int:pk>/detalle/', views.detalle_comentario, name='detalle_comentario'),
+    path('comentario/<int:pk>/editar/', views.editar_comentario, name='editar_comentario'),
 ]
