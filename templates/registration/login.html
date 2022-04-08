@@ -1,15 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block content %}
-<div class="iniciarSesion-container-fluid">
+<div class="iniciarSesion container-fluid">
   <div class="row">
-    
-    <h2 class="text-white">Inicia Sesión</h2>
-    <form method="post", class="iniciarSesion">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Iniciar Sesión</button>
-    </form>
+    <div class="login col-4">
+      <div class="textologin">
+        <form method="post", class="iniciarSesion">
+          {% csrf_token %}
+          <div>
+            {{ form.as_p }}
+          </div>
+          <a href="">¿Has olvidado tu contraseña?</a>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <button class="btn botonlogin" type="submit">Iniciar Sesión</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>   
+    </div>  
   </div>
 </div>
 {% endblock %}
