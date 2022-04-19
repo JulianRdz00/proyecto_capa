@@ -1,8 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="POST" class="text-white">{% csrf_token %}
-    {{ form.as_p }}
+<form method="POST" class="text-white">
+    {% csrf_token %}
+    
+    <div>
+        <input type="text" class="curso form-control" name="curso" placeholder="Nombre del curso">
+    </div>
+    <div>
+        <input type="text" class="titulo form-control" name="titulo" placeholder="Título">
+    </div>
+    <div>
+        <input type="file" class="video form-control" name="video" placeholder="Sube un archivo de video">
+    </div>
+    <div>
+        <input type="text" class="descripcionCurso form-control" name="descripcion" placeholder="Descripcion">
+    </div>
+    <div>
+        <input type="file" class="archivos form-control" name="archivos" placeholder="Sube un tipo de archivo extra">
+    </div>
+    <div>
+        <input type="text" class="descripcionArchivos form-control" name="descripcion_archivos" placeholder="Agrega una descripcion al archivo">
+    </div>
+    <div>
+        <input type="text" class="linksRelevantes form-control" name="links_relevantes" placeholder="Links relacionados">
+    </div>
+    <div>
+        <input type="checkbox" class="habilitarChat form-control" name="habilitar_chat" placeholder="">
+    </div>
+    <div>
+        <input type="checkbox" class="habilitarComentarios form-control" name="habilitar_comentarios" placeholder="">
+    </div>
     <button type="submit" class="btn btn-primary active">Crear</button>
 </form>
 {% endblock content %}

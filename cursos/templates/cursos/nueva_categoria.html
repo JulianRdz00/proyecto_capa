@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="POST" class="text-white">{% csrf_token %}
-    {{ form.as_p }}
+<form method="POST" class="text-white">
+    {% csrf_token %}
+    <div>
+        <input type="text" class="titulo form-control" name="titulo" placeholder="Agregue un titulo">
+    </div>
+    <div>
+        <input type="image" class="icono2 form-control" name="icono">
+    </div>
+
     <button type="submit" class="btn btn-primary active">Crear</button>
 </form>
 {% endblock content %}

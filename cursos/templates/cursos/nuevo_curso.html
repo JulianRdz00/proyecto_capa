@@ -2,7 +2,23 @@
 
 {% block content %}
 <form method="POST" class="text-white">{% csrf_token %}
-    {{ form.as_p }}
+    
+    <div>
+        <input type="text" class="categoria form-control" name="categoria" placeholder="Ej Desarrollo, Literatura...">
+    </div>
+    <div>
+        <input type="text" class="titulo form-control" name="titulo" placeholder="Título">
+    </div>
+    <div>
+        <input type="text" class="descripcion2 form-control" name="descripcion" placeholder="Descripcion">
+    </div>
+    <div>
+        <input type="date" class="vigencia form-control" name="vigencia">
+    </div>
+    <div>
+        <input type="text" class="persona_asignada form-control" name="persona_asignada" placeholder="Tutor">
+    </div>
+    
     <button type="submit" class="btn btn-primary active">Crear</button>
 </form>
 {% endblock content %}
