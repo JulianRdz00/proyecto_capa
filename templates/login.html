@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="iniciarSesion container-fluid">
+  <div class="row">
+    <div class="login col-4">
+      <div class="textologin">
+        <div class="form-group">
+          <form method="post", class="iniciarSesion">
+            {% csrf_token %}
+              <div>
+                <input type="text" class="usuario form-control" name="username" placeholder="Usuario">
+              </div>
+              <div>
+                <input type="password" class="contraseña form-control" name="password" placeholder="Contraseña">
+              </div>
+
+            <a href="">¿Has olvidado tu contraseña?</a>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12">
+                  <button class="btn botonlogin" type="submit">Iniciar Sesión</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>   
+    </div>  
+  </div>
+</div>
+{% endblock %}

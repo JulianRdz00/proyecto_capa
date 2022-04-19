@@ -286,7 +286,17 @@
     font-weight: bold;
     font-size:x-large;    
     color: #E5E5E5;
-    background-color: #01ff39;
+    background-color: #08D23C;
     border-radius: 10px;
-    border: solid #01ff39;
+    border: solid #08D23C;
+}
+
+.usuario{
+    margin-bottom: 5%;
+    border-radius: 10px;
+}
+
+.contraseña{
+    margin-top: 5%;
+    border-radius: 10px;
 }

@@ -1,10 +1,12 @@
 import datetime
+import imp
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .forms import Perfiles
 from .forms import FormPerfiles
 from django.shortcuts import redirect
-
+from django.contrib.auth.views import LoginView
+from .forms import UserloginForm
 
 def perfil_lista(request):
     lista_perfiles = Perfiles.objects.order_by('profesion')
@@ -41,3 +43,8 @@ def perfil_editar(request,pk):
     else:
         form = FormPerfiles(instance=editar)
     return render(request, 'perfiles/perfil_nuevo.html', {'form': form})
+
+
+class CustomLoginView(LoginView):
+    form_class = UserloginForm
+    template_name = 'login.html'
